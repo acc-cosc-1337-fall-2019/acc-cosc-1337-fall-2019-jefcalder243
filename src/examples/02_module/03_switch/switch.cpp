@@ -11,7 +11,7 @@
 
 string menu(int menu_option)
 {
-	return string(menu_option);
+	switch (menu_option)
 	{
 	case 1:
 		return "Option 1";
@@ -24,5 +24,5 @@ string menu(int menu_option)
 	default:
 		return"Invalid";
 	}
-	return string()
+	return string();
 }
