@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "C:\Users\8584014\source\repos\acc-cosc-1337-fall-2019-jefcalder243\src\homework\02_decisions\decisions.h"
+#include "../../../homework/02_decisions/decisions.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
