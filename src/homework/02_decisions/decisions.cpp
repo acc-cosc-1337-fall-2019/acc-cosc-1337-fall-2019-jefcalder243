@@ -1,4 +1,5 @@
 #include "decisions.h"
+#include <iostream>
 //write include statement for decisions header
 
 //Write code for function get_grade_points that accepts a string letter_grade and returns 
@@ -50,6 +51,53 @@ double calculate_gpa(int credit_hours, double credit_points)
 	else
 	{
 		return credit_points / credit_hours;
+	}
+}
+
+string get_letter_grade_using_if(int grade)
+{
+	if (grade >= 90 && grade <= 100)
+	{
+		return string("A");
+	}
+	else if (grade >= 80 && grade <= 89)
+	{
+		return string("B");
+	}
+	else if (grade >= 70 && grade <= 79)
+	{
+		return string("C");
+	}
+	else if (grade >= 60 && grade <= 69)
+	{
+		return string("D");
+	}
+	else if (grade >= 0 && grade <= 59)
+	{
+		return string("F");
+	}
+	else
+	{
+		return string("number out of range");
+	}
+}
+
+string get_letter_grade_using_switch(int grade)
+{
+	switch (grade)
+	{
+	case 100:
+		return string("A");
+	case 89:
+		return string("B");
+	case 79:
+		return string("C");
+	case 69:
+		return string("D");
+	case 59:
+		return string("F");
+	default:
+		return string("number out of range");
 	}
 }
 
