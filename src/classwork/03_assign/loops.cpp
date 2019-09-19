@@ -10,3 +10,12 @@ returns 120
 
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
+int factorial(int num)
+{
+	auto fact = num;
+	for (int i = 1; i < num; ++i)
+	{
+		fact = (num - i)*fact;
+	}
+	return fact;
+}
