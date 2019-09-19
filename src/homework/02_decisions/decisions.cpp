@@ -84,17 +84,27 @@ string get_letter_grade_using_if(int grade)
 
 string get_letter_grade_using_switch(int grade)
 {
-	switch (grade)
+	switch (grade/10)
 	{
-	case 100:
+	case 10:
 		return string("A");
-	case 89:
+	case 9:
+		return string("A");
+	case 8:
 		return string("B");
-	case 79:
+	case 7:
 		return string("C");
-	case 69:
+	case 6:
 		return string("D");
-	case 59:
+	case 5:
+		return string("F");
+	case 4:
+		return string("F");
+	case 3:
+		return string("F");
+	case 2:
+		return string("F");
+	case 1:
 		return string("F");
 	default:
 		return string("number out of range");

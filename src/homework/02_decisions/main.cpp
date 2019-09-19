@@ -54,7 +54,15 @@ int main()
 	double gpa = calculate_gpa(sum_credit_hours, sum_credit_points);
 	cout << "GPA: " << gpa;
 
+	int percentage = 0;
+	string grade = "A";
 
+	cout << "\n" << "Please enter grade percentage";
+	cin >> percentage;
+	grade = get_letter_grade_using_if(percentage);
+	cout << "with if: " << grade << "\n";
+	grade = get_letter_grade_using_switch(percentage);
+	cout << "with switch: "<< grade;
 
 	return 0;
 }
