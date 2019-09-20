@@ -97,15 +97,12 @@ string get_letter_grade_using_switch(int grade)
 	case 6:
 		return string("D");
 	case 5:
-		return string("F");
 	case 4:
-		return string("F");
 	case 3:
-		return string("F");
 	case 2:
-		return string("F");
 	case 1:
-		return string("F");
+	case 0:
+		return "F";
 	default:
 		return string("number out of range");
 	}
