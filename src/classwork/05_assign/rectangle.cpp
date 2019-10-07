@@ -19,6 +19,7 @@ int Rectanglee::get_area()const
 	return area;
 }
 
+// void acc::rectangle::calculate_area() - with namespace
 void Rectanglee::calculate_area()
 {
 	area = width * hight;
