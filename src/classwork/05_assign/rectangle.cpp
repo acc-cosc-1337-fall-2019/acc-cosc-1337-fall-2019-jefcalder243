@@ -14,6 +14,10 @@ Rectangle::Rectangle(int width, int hight)
 	hight = 5;
 }*/
 
+Rectanglee::Rectanglee()
+{
+}
+
 int Rectanglee::get_area()const
 {
 	return area;
@@ -24,3 +28,11 @@ void Rectanglee::calculate_area()
 {
 	area = width * hight;
 }
+
+std::ostream & operator<<(std::ostream & out, const Rectanglee & r)//overloaded operator function
+{
+	out << "Area: " << r.area << "\n";
+
+	return out;
+}
+
