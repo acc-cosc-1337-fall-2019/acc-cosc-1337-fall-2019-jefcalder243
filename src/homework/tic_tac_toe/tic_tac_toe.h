@@ -14,7 +14,8 @@ public:
 	void start_game(string player);
 	void mark_board(int position);
 	string get_player() const;
-	void display_board() const;
+	friend std::istream & operator >>(std::istream & in, TicTacToe & t);
+	friend std::ostream & operator <<(std::ostream & out, const TicTacToe & t);
 
 private:
 	vector<string> pegs{ 9, " " };//initializer

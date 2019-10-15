@@ -28,13 +28,6 @@ string TicTacToe::get_player() const
 	return next_player;
 }
 
-void TicTacToe::display_board() const
-{
-	for (int i = 0; i < 3; i++)
-	{
-		cout << pegs[i * 3] << "|" << pegs[i * 3 + 1] << "|" << pegs[i * 3 + 2] << "\n";
-	}
-}
 
 void TicTacToe::set_next_player()
 {
@@ -102,4 +95,25 @@ bool TicTacToe::check_board_full()
 		}
 	}
 	return true;
+}
+
+std::istream & operator>>(std::istream & in, TicTacToe & t)
+{
+	int choice = 0;
+	cout << "choose a number from 1 to 9 for player " << t.get_player() << "\n";
+	in >> choice;
+	t.mark_board(choice);
+
+
+	return in;
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		out << t.pegs[i * 3] << "|" << t.pegs[i * 3 + 1] << "|" << t.pegs[i * 3 + 2] << "\n";
+	}
+
+	return out;
 }

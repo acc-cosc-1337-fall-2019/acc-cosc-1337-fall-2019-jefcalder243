@@ -12,10 +12,9 @@ int main()
 		board.start_game("X");
 		while (board.game_over() == false)
 		{
-			cout << "choose a number from 1 to 9 for player "<< board.get_player() << "\n";
-			cin >> choice;
-			board.mark_board(choice);
-			board.display_board();
+			cin >> board;
+			cout << board;
+
 		}
 
 		cout << "Enter y to play again. \n";
