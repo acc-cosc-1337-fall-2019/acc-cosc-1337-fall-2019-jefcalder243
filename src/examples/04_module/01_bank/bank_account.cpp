@@ -54,3 +54,11 @@ std::istream & operator >> (std::istream & in, BankAccount & b)
 
 	return in;
 }
+
+BankAccount BankAccount::operator+(const BankAccount & b)
+{
+	BankAccount account;
+	account.balance = balance + b.balance;
+
+	return account;
+}
