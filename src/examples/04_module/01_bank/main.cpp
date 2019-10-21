@@ -12,17 +12,16 @@ using std::cin;
 
 int main()
 {
-	CheckingAccount a(1500);
-	cout << a;
+	CheckingAccount checking(1500);
+	cout << "\n checking get_balance " << checking.get_balance() << "\n";
 
-	SavingsAccount savings(500,.05);
-	cout <<"calls bank account overload ostream"<< savings;
-	cout << "\n savings get_balance" << savings.get_balance() << "\n";
-	savings.add_interest();
-	cout << savings;
+	SavingsAccount savings(500);
+	cout << "\n savings get_balance " << savings.get_balance() << "\n";
 
-	BankAccount c = a + savings;
-	cout << c;
+	BankAccount& account = savings;
+	cout << "\n Ref to savings get_balance: " << account.get_balance() << "\n";
+
+
 
 	return 0;
 }
