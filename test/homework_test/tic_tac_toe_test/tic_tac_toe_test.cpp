@@ -166,19 +166,21 @@ TEST_CASE("Test win diagonally from top left", "[X wins diagonally from top left
 vector view: 0, 4, and 8
 	   */
 	TicTacToe board;
-	board.start_game("X");
-	REQUIRE(board.get_player() == "X");
-	board.mark_board(1);//X         
+	board.start_game("O");
+	REQUIRE(board.get_player() == "O");
+	board.mark_board(1);//O         
 	REQUIRE(board.game_over() == false);
-	board.mark_board(4);//O          
+	board.mark_board(4);//X          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(5);//X          
+	board.mark_board(5);//O          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(3);//O          
+	board.mark_board(3);//X          
 	REQUIRE(board.game_over() == false);
-	board.mark_board(9);//X 
-	//X wins 
+	board.mark_board(9);//O 
+	//O wins 
 	REQUIRE(board.game_over() == true);
+
+	REQUIRE(board.get_winner() == "O");
 }
 
 TEST_CASE("Test win diagonally from bottom left", "[X wins diagonally from bottom left]")
@@ -204,6 +206,8 @@ vector view: 2, 4, and 6
 	board.mark_board(7);//X 
 	//X wins 
 	REQUIRE(board.game_over() == true);
+
+	REQUIRE(board.get_winner() == "X");
 }
 
 TEST_CASE("Test for no winner")
@@ -238,6 +242,8 @@ TEST_CASE("Test for no winner")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(8);//X
 	REQUIRE(board.game_over() == true);
+
+	REQUIRE(board.get_winner() == "C");
 }
 
 TEST_CASE("test set first player X")

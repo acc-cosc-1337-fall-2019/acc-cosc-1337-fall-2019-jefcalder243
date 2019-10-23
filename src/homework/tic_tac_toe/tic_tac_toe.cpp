@@ -27,10 +27,8 @@ void TicTacToe::mark_board(int position)
 {
 	pegs[position - 1] = next_player;
 
-	if (!game_over())
-	{
-		set_next_player();
-	}
+	set_next_player();
+	
 }
 
 string TicTacToe::get_player() const
@@ -109,7 +107,7 @@ bool TicTacToe::check_board_full()
 
 void TicTacToe::set_winner()
 {
-	if(check_board_full())
+
 	if (next_player == "X")
 	{
 		winner = "O";

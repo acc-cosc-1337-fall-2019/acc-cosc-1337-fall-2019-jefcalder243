@@ -1,7 +1,6 @@
 #include "tic_tac_toe_manager.h"
 
 //cpp
-
 ostream & operator<<(ostream & out, const TicTacToeManager & m)
 {
 	for (auto game : m.games)
