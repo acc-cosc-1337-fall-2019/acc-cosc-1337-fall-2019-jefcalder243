@@ -15,33 +15,28 @@ int main()
 	line->draw();
 	delete line;
 
-	//vector of Shape pointers
-	std::vector<Shape*> shapes{new Line(), new Circle()};
+	std::vector < Shape *> shapes{ new Line(), new Circle() };
+	//using a reference operator
+	for (auto & shape : shapes)
+	{
+		shape->draw();
+	}
+	std::cout << std::endl;
 
-	for (auto& shape : shapes) 
+	for (auto * shape : shapes)
 	{
 		shape->draw();
 	}
 
-	std::cout << "\n";
-	
-	for (auto* shape : shapes)
-	{
-		shape->draw();
-	}
 
-	std::cout << "\n";
+	std::unique_ptr < Shape > line2 = std::make_unique< Line >();
+	line2->draw();
 
-	//Shape instance using Smart Pointer
-	std::unique_ptr<Shape> l = std::make_unique<Line>();
-	l->draw();
+	std::vector <std::unique_ptr < Shape >> shapes2;
+	shapes2.push_back(std::make_unique< Line >());
+	shapes2.push_back(std::make_unique< Circle >());
 
-	//vector of Shape instances using Smart Pointers
-	std::vector <std::unique_ptr < Shape >> shaps;
-	shaps.push_back(std::make_unique< Line >());
-	shaps.push_back(std::make_unique< Circle >());
-
-	for (auto & shape : shaps)
+	for (auto & shape : shapes2)
 	{
 		shape->draw();
 	}
