@@ -51,37 +51,16 @@ void TicTacToe::set_next_player()
 
 bool TicTacToe::check_column_win()
 {
-	for (std::size_t i = 0; i < 3; i ++)
-	{
-		if (pegs[i] == pegs[i + 3] && pegs[i + 3] == pegs[i + 6]
-			&& pegs[i+6] != " ")
-		{
-			return true;
-		}
-	}
 	return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-	if (pegs[0] == pegs[1] && pegs[1] == pegs[2]
-		&& pegs[2] != " " || pegs[3] == pegs[4] && pegs[4] == pegs[5]
-		&& pegs[5] != " " || pegs[6] == pegs[7] && pegs[7] == pegs[8]
-		&& pegs[8] != " ")
-	{
-		return true;
-	}
 	return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-	if (pegs[0] == pegs[4] && pegs[4] == pegs[8]
-		&& pegs[8] != " " || pegs[2] == pegs[4] && pegs[4] == pegs[6]
-		&& pegs[6] != " ")
-	{
-		return true;
-	}
 	return false;
 }
 
@@ -95,7 +74,7 @@ void TicTacToe::clear_board()
 
 bool TicTacToe::check_board_full()
 {
-	for (int i=0; i < 9; i++)
+	for (int i=0; i < size*size; i++)
 	{
 		if (pegs[i] == " ")
 		{
@@ -121,7 +100,7 @@ void TicTacToe::set_winner()
 std::istream & operator>>(std::istream & in, TicTacToe & t)
 {
 	int choice = 0;
-	cout << "choose a number from 1 to 9 for player " << t.get_player() << "\n";
+	cout << "choose a number from 1 to" << t.size*t.size << "for player " << t.get_player() << "\n";
 	in >> choice;
 	t.mark_board(choice);
 
@@ -131,11 +110,20 @@ std::istream & operator>>(std::istream & in, TicTacToe & t)
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
 {
-	for (int i = 0; i < 3; i++)
+	if (t.size == 3)
 	{
-		out << t.pegs[i * 3] << "|" << t.pegs[i * 3 + 1] << "|" << t.pegs[i * 3 + 2] << "\n";
+		for (int i = 0; i < 3; i++)
+		{
+			out << t.pegs[i * 3] << "|" << t.pegs[i * 3 + 1] << "|" << t.pegs[i * 3 + 2] << "\n";
+		}
 	}
-
+	if (t.size == 4)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			out << t.pegs[i * 4] << "|" << t.pegs[i * 4 + 1] << "|" << t.pegs[i * 4 + 2] << "|" << t.pegs[i * 4 + 3] << "\n";
+		}
+	}
 	return out;
 }
 
