@@ -6,33 +6,33 @@ using std::cin;
 
 int main() 
 {
-	
+	//TicTacToe3 three;
 	TicTacToeManager manager;
 	auto option = 'y';
 	int choice = 0;
+	int dim;
 	do 
 	{
-		int dim = 0;
 		cout << "Would you like to play with dimensions of 3 or 4?";
 		cin >> dim;
-		TicTacToe3 board;
-		if (dim = 3)
+		TicTacToe* board;
+		if (dim == 3)
 		{
-			TicTacToe3 board;
+			board = new TicTacToe3;
 		}
-		if (dim = 4)
+		else
 		{
-			TicTacToe4 board;
+			board = new TicTacToe4;
 		}
-		board.start_game("X");
-		while (board.game_over() == false)
+		board->start_game("X");
+		while (board->game_over() == false)
 		{
-			cin >> board;
-			cout << board;
+			cin >> *board;
+			cout << *board;
 
 		}
 
-		manager.save_game(board);
+		manager.save_game(*board);
 
 		cout << "Enter y to play again. \n";
 		cin >> option;

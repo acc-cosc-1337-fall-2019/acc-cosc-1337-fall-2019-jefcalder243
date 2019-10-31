@@ -74,7 +74,7 @@ void TicTacToe::clear_board()
 
 bool TicTacToe::check_board_full()
 {
-	for (int i=0; i < size*size; i++)
+	for (int i=0; i < pegs.size(); i++)
 	{
 		if (pegs[i] == " ")
 		{
@@ -100,7 +100,7 @@ void TicTacToe::set_winner()
 std::istream & operator>>(std::istream & in, TicTacToe & t)
 {
 	int choice = 0;
-	cout << "choose a number from 1 to" << t.size*t.size << "for player " << t.get_player() << "\n";
+	cout << "choose a number from 1 to" << t.pegs.size() << "for player " << t.get_player() << "\n";
 	in >> choice;
 	t.mark_board(choice);
 
@@ -110,14 +110,14 @@ std::istream & operator>>(std::istream & in, TicTacToe & t)
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
 {
-	if (t.size == 3)
+	if (t.pegs.size() == 9)
 	{
 		for (int i = 0; i < 3; i++)
 		{
 			out << t.pegs[i * 3] << "|" << t.pegs[i * 3 + 1] << "|" << t.pegs[i * 3 + 2] << "\n";
 		}
 	}
-	if (t.size == 4)
+	if (t.pegs.size() == 16)
 	{
 		for (int i = 0; i < 4; i++)
 		{
