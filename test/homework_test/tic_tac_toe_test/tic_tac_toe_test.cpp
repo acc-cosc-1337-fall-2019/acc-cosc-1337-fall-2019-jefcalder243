@@ -534,7 +534,7 @@ TEST_CASE("Test win diagonally from bottom left 4", "[X wins diagonally from bot
 	   First column win are user positions 4,7,10, and 13
 
 	   */
-	TicTacToe3 board;
+	TicTacToe4 board;
 	board.start_game("X");
 	REQUIRE(board.get_player() == "X");
 	board.mark_board(4);//X         
@@ -557,7 +557,7 @@ TEST_CASE("Test win diagonally from bottom left 4", "[X wins diagonally from bot
 	REQUIRE(board.get_winner() == "X");
 }
 
-TEST_CASE("Test for no winner")
+TEST_CASE("Test for no winner 4")
 { /* Tic Tac Toe Board
 		123
 		456

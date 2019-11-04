@@ -66,17 +66,17 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::clear_board()
 {
-	for (int i=0; i < 9; i++)
+	for (auto& peg: pegs)
 	{
-		pegs[i] = " ";
+		peg = " ";
 	}
 }
 
 bool TicTacToe::check_board_full()
 {
-	for (int i=0; i < pegs.size(); i++)
+	for (auto peg: pegs)
 	{
-		if (pegs[i] == " ")
+		if (peg == " ")
 		{
 			return false;
 		}
