@@ -18,11 +18,11 @@ int main()
 		TicTacToe* board;
 		if (dim == 3)
 		{
-			board = new TicTacToe3;
+			board = new TicTacToe3();
 		}
 		else
 		{
-			board = new TicTacToe4;
+			board = new TicTacToe4();
 		}
 		board->start_game("X");
 		while (board->game_over() == false)
