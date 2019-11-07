@@ -39,7 +39,7 @@ int main()
 	} while (option == 'y' || option == 'Y');
 
 	cout << "History: \n";
-	cout << manager;
+	cout << *manager;
 	
 	return 0;
 }
