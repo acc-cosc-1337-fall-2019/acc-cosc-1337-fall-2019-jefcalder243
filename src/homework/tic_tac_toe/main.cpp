@@ -7,7 +7,7 @@ using std::cin;
 int main() 
 {
 	//TicTacToe3 three;
-	TicTacToeManager manager;
+	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>();
 	auto option = 'y';
 	int choice = 0;
 	int dim;
@@ -15,14 +15,14 @@ int main()
 	{
 		cout << "Would you like to play with dimensions of 3 or 4?";
 		cin >> dim;
-		TicTacToe* board;
+		unique_ptr<TicTacToe> board;
 		if (dim == 3)
 		{
-			board = new TicTacToe3();
+			board = std::make_unique<TicTacToe3>();
 		}
 		else
 		{
-			board = new TicTacToe4();
+			board = std::make_unique<TicTacToe4>();
 		}
 		board->start_game("X");
 		while (board->game_over() == false)
@@ -32,7 +32,7 @@ int main()
 
 		}
 
-		manager.save_game(*board);
+		manager->save_game(board);
 
 		cout << "Enter y to play again. \n";
 		cin >> option;
