@@ -20,6 +20,7 @@ public:
 	void mark_board(int position);
 	string get_player() const;
 	string get_winner() const;
+	const vector<string>& get_pegs();
 	friend std::istream & operator >>(std::istream & in, TicTacToe & t);
 	friend std::ostream & operator <<(std::ostream & out, const TicTacToe & t);
 

@@ -132,3 +132,9 @@ string TicTacToe::get_winner() const
 {
 	return winner;
 }
+
+const vector<string>& TicTacToe::get_pegs()
+{
+	return pegs;
+}
+
