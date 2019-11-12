@@ -5,8 +5,8 @@
 #include<string>
 #include<memory>
 #include "text.h"
-#include "circle.h"
-#include "rectangle.h"
+#include "../src/examples/10_module/01_shapes/circle.h"
+#include "../src/examples/10_module/01_shapes/rectangle.h"
 
 class Panel : public wxPanel 
 {
