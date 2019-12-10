@@ -1,6 +1,11 @@
 #include "recursion.h"
 #include<iostream>
 //
+//this will create and infinite recursive call
+void call_myself()
+{
+	call_myself();
+}
 
 void display(int n)
 {
